@@ -1,0 +1,27 @@
+#!/bin/bash
+# Author: Ifiok
+# Date: 08/10/2024
+# test-integer1: evaluate the value of an integer
+
+INTEGER=-4
+read INTEGER
+if [ -z "$INTEGER" ]; then
+	echo "INTEGER is empty" >&2
+	exit 1
+fi
+if [ "$INTEGER" -eq 0 ]; then
+	echo "INTEGER equal 0"
+else
+	if [ "$INTEGER" -lt 0 ]; then
+		echo "INTEGER is negative"
+	else
+		echo "INTEGER is positive"
+	fi
+	if [ $((INTEGER % 2)) -eq 0 ]; then
+		echo "INTEGER is even"
+	else
+		echo "INTEGER is odd"
+	fi
+fi
+
+
